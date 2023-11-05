@@ -11,7 +11,7 @@
     </section>
     <div class="grid">
       <div class="rounded-[3px] bg-[rgb(244,245,248)] pt-3 pb-3 pl-3 pr-3">
-
+        
       </div>
     </div>
   </div>

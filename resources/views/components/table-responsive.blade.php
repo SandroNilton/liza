@@ -1,5 +1,5 @@
-<div class="p-3">
-  <div class="flex flex-col mb-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
+<div class="pt-5">
+  <div class="md:items-center mb-3">
     {{ $heading }}
   </div>
   <div class="overflow-x-auto rounded-[2.5px] mb-3">

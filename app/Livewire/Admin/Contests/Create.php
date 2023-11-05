@@ -3,16 +3,17 @@
 namespace App\Livewire\Admin\Contests;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\Contest;
 
 class Create extends Component
 {
+    use WithFileUploads;
 
-    public $title, $slug, $subtitle, $description;
+    public $title, $subtitle, $description, $cover;
 
     protected $rules = [
       'title' => 'required|unique:contests',
-      'slug' => 'required|unique:contests',
       'subtitle' => 'required',
     ];
 
@@ -20,9 +21,16 @@ class Create extends Component
     {
       $this->validate();
 
+      if($this->cover == null){
+        $path = null;
+      }else{
+        $filename = $this->cover->getClientOriginalName();
+        $path = $this->cover->storeAs('cover', $filename);
+      }
+
       $contest = Contest::create([
+        'cover_image' => $path,
         'title' => $this->title,
-        'slug' => $this->slug,
         'subtitle' => $this->subtitle,
         'user_id' => auth()->user()->id,
         'description' => $this->description

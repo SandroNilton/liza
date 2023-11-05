@@ -27,10 +27,9 @@ class Participate extends Component
     public function uploads()
     {
       foreach ($this->files as $file) {
-        $this->recolect = $file;
+        $this->files->store('photos');
       }
 
-      dd($this->recolect);
     }
 
     public function render()

@@ -13,10 +13,12 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
   </head>
     <body class="font-inter bg-[rgb(250,252,255)] scrollbar"> 
       <section class="bg-gray-50 dark:bg-gray-900">
         {{ $slot }}
       </section>
     </body>
+    @livewireScripts
 </html>

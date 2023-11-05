@@ -17,7 +17,7 @@ class Contest extends Model
     public function image(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->cover_image ?? "https://www.bbzix.com/wp-content/plugins/accelerated-mobile-pages/images/SD-default-image.png"
+            get: fn () => $this->cover_image ??'default/cover.jpg',
         );
     }
 

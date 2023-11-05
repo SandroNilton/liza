@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('cover_image')->nullable();
             $table->string('title');
             $table->string('subtitle');
-            $table->string('slug');
             $table->text('description')->nullable();
             $table->foreignId('user_id')->nullable()->nullOnDelete();
             $table->tinyInteger('state')->default(1);

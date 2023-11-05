@@ -1,58 +1,58 @@
 <div>
   <x-table-responsive>
     <x-slot name="heading">
-      <div class="flex items-center flex-1 space-x-4">
-        <h1>
-          <span class="font-medium text-[13px] text-[#2477bc] uppercase mb-3">Concursos:</span>
-          <span class="font-medium text-[13px] uppercase mb-3">{{ $contests->count() }}</span>
-        </h1>
-      </div>
-      <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
-        <x-primary-button href="{{ route('admin.contests.create') }}" wire:navigate>Nuevo</x-primary-button>
-      </div>
+      {{ $contests->links() }}
     </x-slot>
-    <div>
-      
-    </div>
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-[13px] leading-4 text-white uppercase bg-[#2477bc]">
+    <table class="w-full text-left whitespace-nowrap">
+      <thead class="text-[12px] leading-3">
         <tr>
-          <th scope="col" class="px-4 py-3">Titulo</th>
-          <th scope="col" class="px-4 py-3">Participantes</th>
-          <th scope="col" class="px-4 py-3">Estado</th>
-          <th scope="col" class="px-4 py-3">Creador</th>
-          <th scope="col" class="px-4 py-3">Opciones</th>
+          <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Titulo</th>
+          <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Participantes</th>
+          <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Estado</th>
+          <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Creador</th>
+          <th scope="col" class="px-3 py-2"></th>
         </tr>
       </thead>
       <tbody>
+        <tr class="h-2"></tr>
         @forelse ($contests as $contest)
-          <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
-                <img src="{{ $contest->image }}" alt="iMac Front Image" class="w-auto h-8 mr-3 rounded-[2.5px]">
-                {{ $contest->title }}
-            </th>
-            <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
-              <div class="flex items-center">
-                <ion-icon name="people-outline" class="w-5 h-5 mr-2 text-gray-400" wire:ignore></ion-icon>
-                {{ $contest->participants_count }}
+          <tr tabindex="0" class="focus:outline-none h-14 border border-[#F0F1F2] bg-white shadow-sm">
+            <td class="px-5">
+              <div class="flex items-center pl-5">
+                <img class="object-cover w-8 h-8 mr-3 rounded" src="{{ Storage::url($contest->image) }}">
+                <p class="text-sm font-medium leading-none text-[#4C4F54] mr-2">{{ $contest->title }}</p>
               </div>
             </td>
-            <td class="px-4 py-2">{{ $contest->state }}</td>
-            <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{ $contest->user->name }}</td>
-            <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
-              <x-secondary-button href="{{ route('admin.contests.edit', $contest) }}" wire:navigate>Editar</x-secondary-button>
+            <td class="px-5">
+              <div class="flex items-center">
+                <ion-icon name="people-outline" class="w-5 h-5 mr-2 text-[#4C4F54]" wire:ignore></ion-icon>
+                <p class="text-[13px] font-medium leading-none text-[#4C4F54] ml-2">{{ $contest->participants_count }}</p>
+              </div>
+            </td>
+            <td class="px-5">
+              <div class="flex items-center">
+                <p class="text-[13px] font-medium leading-none text-[#4C4F54] ml-2">{{ $contest->state }}</p>
+              </div>
+            </td>
+            <td class="px-5">
+              <div class="flex items-center">
+                <p class="text-[13px] font-medium leading-none text-gray-600 ml-2">{{ $contest->user->name }}</p>
+              </div>
+            </td>
+            <td class="px-3">
+              <button href="{{ route('admin.contests.edit', $contest) }}" wire:navigate class="text-[13px] leading-none text-gray-600 py-2 px-4 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">Ver</button>
             </td>
           </tr>
+          <tr class="h-2"></tr>
         @empty
           <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <th colspan="5" class="col-span-5 flex items-center px-4 py-2 text-center font-medium text-gray-500 whitespace-nowrap">
+            <th colspan="5" class="flex items-center col-span-5 px-4 py-2 font-medium text-center text-gray-500 whitespace-nowrap">
             </th>
           </tr>
         @endforelse
       </tbody>
     </table>
-    <x-slot name="footer">
-      {{ $contests->links() }}
+    <x-slot name="footer">   
     </x-slot>
   </x-table-responsive>
 </div>

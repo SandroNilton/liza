@@ -8,17 +8,23 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @stack('css')
   </head>
-  <body class="mb-20 antialiased bg-white font-inter scrollbar">
-
-    <livewire:layout.admin.navigation />
-
-    <div class="grow">
-      {{ $slot }}
+  <body class="antialiased font-nunito scrollbar">
+    
+    <div class="md:flex h-screen overflow-y-hidden bg-[#F6F8FA]" x-data="{ sidebarOpen: $persist(false) }">
+      <livewire:layout.admin.side />
+      <livewire:layout.admin.nav />
+      <div class="flex-1 max-h-full overflow-y-auto grow scrollbar pb-16">
+        {{ $slot }}
+      </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

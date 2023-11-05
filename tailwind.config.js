@@ -13,7 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                inter: ["Inter", "sans-serif"],
+                inter: ["Nunito", "sans-serif"],
             },
         },
     },
