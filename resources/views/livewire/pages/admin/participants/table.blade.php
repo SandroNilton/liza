@@ -8,7 +8,6 @@
         <tr>
           <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Titulo</th>
           <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Participantes</th>
-          <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Mi estado</th>
           <th scope="col" class="px-5 py-2 font-semibold tracking-widest text-gray-400 uppercase">Estado</th>
           <th scope="col" class="px-3 py-2"></th>
         </tr>
@@ -31,16 +30,11 @@
             </td>
             <td class="px-5">
               <div class="flex items-center">
-                <p class="text-[13px] font-medium leading-none text-[#4C4F54] ml-2">@can('participating', $contest) Aplicando @else Sin aplicar @endcan</p>
-              </div>
-            </td>
-            <td class="px-5">
-              <div class="flex items-center">
                 <p class="text-[13px] font-medium leading-none text-[#4C4F54] ml-2">{{ $contest->state }}</p>
               </div>
             </td>
             <td class="px-3">
-              <button href="{{ route('admin.contests.edit', $contest) }}" wire:navigate class="text-[13px] leading-none text-gray-600 py-2 px-4 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">Ver</button>
+              <button href="{{ route('admin.participants.group', $contest) }}" wire:navigate class="text-[13px] leading-none text-gray-600 py-2 px-4 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">Ver</button>
             </td>
           </tr>
           <tr class="h-2"></tr>

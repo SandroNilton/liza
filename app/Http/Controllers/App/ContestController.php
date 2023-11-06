@@ -17,14 +17,4 @@ class ContestController extends Controller
   {
     return view('app.contests.show', compact('contest'));
   }
-
-  public function participate(Contest $contest): view
-  {
-    return view('app.contests.participate', compact('contest'));
-  }
-
-  public function participateStatus(Contest $contest): view
-  {
-    return view('app.contests.participate-status', compact('contest'));
-  }
 }

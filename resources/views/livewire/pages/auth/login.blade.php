@@ -41,7 +41,7 @@ new #[Layout('layouts.guest')] class extends Component
         if (auth()->user()->type == 'admin') {
           $this->redirect(route('admin.dashboard'), navigate: true);
         }else{
-          $this->redirect(route('dashboard'), navigate: true);
+          $this->redirect(route('app.dashboard'), navigate: true);
         }
     }
 

@@ -22,24 +22,17 @@ new class extends Component
   $links =  [
     [
       'title' => 'Inicio',
-      'url' => route('admin.dashboard'),
-      'active' => request()->routeIs('admin.dashboard'),
+      'url' => route('app.dashboard'),
+      'active' => request()->routeIs('app.dashboard'),
       'icon' => 'shapes-outline',
-      'can' => 'admin.dashboard'
+      'can' => 'app.dashboard'
     ],
     [
       'title' => 'Concursos',
-      'url' => route('admin.contests.index'),
-      'active' => request()->routeIs('admin.contests.index'),
+      'url' => route('app.contests.index'),
+      'active' => request()->routeIs('app.contests.index'),
       'icon' => 'ticket-outline',
-      'can' => 'admin.contests.index'
-    ],
-    [
-      'title' => 'Participantes',
-      'url' => route('admin.participants.index'),
-      'active' => request()->routeIs('admin.participants.index'),
-      'icon' => 'hand-right-outline',
-      'can' => 'admin.participants.index'
+      'can' => 'app.contests.index'
     ],
   ];
 @endphp

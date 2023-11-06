@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RequirementController;
 use App\Http\Controllers\Admin\ContestController;
+use App\Http\Controllers\Admin\ParticipantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,6 @@ Route::middleware(['auth', 'user-access:admin'])->prefix('admin')->name('admin.'
     Route::resource('roles', RoleController::class);
     Route::resource('requirements', RequirementController::class);
     Route::resource('contests', ContestController::class);
+    Route::resource('participants', ParticipantController::class);
+    Route::get('/participants/{contest}/group', [ParticipantController::class, 'group'])->name('participants.group');
 });

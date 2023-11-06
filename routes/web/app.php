@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\App\ContestController;
+use App\Http\Controllers\App\ParticipantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,9 @@ use App\Http\Controllers\App\ContestController;
 |
 */
 
-Route::middleware(['verified', 'auth', 'user-access:user'])->group(function (){
+Route::middleware(['verified', 'auth', 'user-access:user'])->name('app.')->group(function (){
     Route::view('/', 'app.dashboard')->name('dashboard');
     Route::view('profile', 'app.profile')->name('profile');
     Route::resource('contests', ContestController::class);
-    Route::get('/participate/{contest}', [ContestController::class, 'participate'])->name('contests.participate');
-    Route::get('/participate-status/{contest}', [ContestController::class, 'participateStatus'])->name('contests.participate-status');
+    Route::resource('participants', ParticipantController::class);
 });

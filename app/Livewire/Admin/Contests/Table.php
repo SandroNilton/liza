@@ -12,6 +12,6 @@ class Table extends Component
 
     public function render()
     {
-        return view('livewire.pages.admin.contests.table', ['contests' => Contest::where('state',1)->orderBy('created_at', 'desc')->paginate(9),]);
+        return view('livewire.pages.admin.contests.table', ['contests' => Contest::orderBy('created_at', 'desc')->paginate(10),]);
     }
 }

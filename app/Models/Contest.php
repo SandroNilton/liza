@@ -39,7 +39,7 @@ class Contest extends Model
     }
 
     public function participants(){
-        return $this->belongsToMany('App\Models\User');
+        return $this->hasMany('App\Models\Participant');
     }
 
     public function requirements()

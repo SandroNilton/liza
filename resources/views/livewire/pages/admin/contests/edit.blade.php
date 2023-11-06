@@ -2,7 +2,7 @@
   <article class="mb-2">
     <div>
       <form wire:submit.prevent="update" class="space-y-2" enctype="multipart/form-data">
-        <div class="relative flex justify-center p-1 mt-1 border border-gray-300 border-dashed rounded" x-data="previewImage()">
+        <div class="relative flex justify-center p-1 border border-gray-300 border-dashed rounded" x-data="previewImage()">
           <figure>
             <img id="preview" x-show="imageUrl" :src="imageUrl" alt="" class="object-center w-full rounded">
             <img x-show="!imageUrl" src="https://drkamalpashafoundation.com/wp-content/uploads/2022/07/noimage.jpg" alt="" class="aspect-[11/5] object-cover object-center w-full rounded">

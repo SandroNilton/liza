@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Contests;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Sleep;
 use App\Models\Contest;
 
 class Edit extends Component
@@ -33,12 +34,14 @@ class Edit extends Component
     {
       $this->validate();
 
-      if($this->cover == null){
-        $path = null;
-      }else{
+      if($this->cover != null){
+        Sleep::for(5)->seconds();
+        //dd($this->cover->getClientOriginalName());
         $filename = $this->cover->getClientOriginalName();
         $path = $this->cover->storeAs('cover', $filename);
         Storage::delete($this->oldcover);
+      }else{
+        $path = null;
       }
 
       $this->contest->update(

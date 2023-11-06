@@ -21,7 +21,7 @@
       </div>
     </div>
   </section>
-  <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 p-3 gap-3">
+  <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 p-3 gap-3 ">
     <div class="p-3 mb-3 col-span-2">
       <h1 class="font-medium text-[13px] uppercase mb-3"><span class="font-medium text-[#2477bc] mr-2">Participar:</span> {{ $contest->title }}</h1>
       <h1 class="font-medium text-[13px] uppercase mb-3"><span class="font-medium text-[#2477bc] mr-2">Tiempo:</span> 02/10/2023 15:00 - 06/10/2023</h1>

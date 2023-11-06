@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
   <div class="px-5 py-1.5">
     <div class="justify-between flex items-center py-1.5">
       <div>
@@ -6,6 +6,6 @@
       </div>
     </div>
     <div class="pt-1"><hr class="border-[#EAECF0]"></div>
-    @livewire('app.contests.table')
+    @livewire('admin.participants.table')
   </div>
-</x-app-layout>
+</x-admin-layout>
