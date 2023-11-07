@@ -2,7 +2,7 @@
   <article class="mb-2">
     <div>
       <div class="space-y-4">
-        <div class="relative flex justify-center p-1 border border-gray-300 border-dashed rounded" x-data="previewImage()">
+        <div class="relative flex justify-center p-1 border border-gray-300 border-dashed rounded">
           <figure>
             <img id="preview" src="{{ Storage::url($this->cover) }}" alt="" class="object-center w-full rounded">
           </figure>

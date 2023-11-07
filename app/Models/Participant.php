@@ -10,6 +10,8 @@ class Participant extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     protected function state(): Attribute
     {
         return new Attribute(

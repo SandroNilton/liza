@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('storages', function (Blueprint $table) {
+        Schema::create('spaces', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->nullOnDelete();
             $table->foreignId('participant_id')->nullable()->nullOnDelete();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('storages');
+        Schema::dropIfExists('spaces');
     }
 };

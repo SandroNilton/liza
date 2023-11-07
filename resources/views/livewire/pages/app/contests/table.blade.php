@@ -40,7 +40,7 @@
               </div>
             </td>
             <td class="px-3">
-              <button href="{{ route('admin.contests.edit', $contest) }}" wire:navigate class="text-[13px] leading-none text-gray-600 py-2 px-4 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">Ver</button>
+              <button href="{{ route('app.contests.show', $contest) }}" wire:navigate class="text-[13px] leading-none text-gray-600 py-2 px-4 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">Ver</button>
             </td>
           </tr>
           <tr class="h-2"></tr>

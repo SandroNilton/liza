@@ -11,8 +11,8 @@ class Requirement extends Model
     
     protected $guarded = ['id'];
 
-    public function section()
+    public function folder()
     {
-      return $this->belongsTo('App\Models\Section');
+      return $this->belongsTo('App\Models\Folder');
     }
 }
